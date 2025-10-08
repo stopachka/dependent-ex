@@ -1,6 +1,6 @@
 // Docs: https://www.instantdb.com/docs/modeling-data
 
-import { i } from '@instantdb/react';
+import { i } from "@instantdb/react";
 
 const _schema = i.schema({
   entities: {
@@ -25,8 +25,8 @@ const _schema = i.schema({
   },
   links: {
     statesCities: {
-      forward: { on: 'cities', has: 'one', label: 'state' },
-      reverse: { on: 'states', has: 'many', label: 'cities' },
+      forward: { on: "cities", has: "one", label: "state" },
+      reverse: { on: "states", has: "many", label: "cities" },
     },
   },
   rooms: {
