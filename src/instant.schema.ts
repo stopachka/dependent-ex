@@ -16,8 +16,19 @@ const _schema = i.schema({
       done: i.boolean(),
       createdAt: i.number(),
     }),
+    states: i.entity({
+      name: i.string().indexed(),
+    }),
+    cities: i.entity({
+      name: i.string().indexed(),
+    }),
   },
-  links: {},
+  links: {
+    statesCities: {
+      forward: { on: 'cities', has: 'one', label: 'state' },
+      reverse: { on: 'states', has: 'many', label: 'cities' },
+    },
+  },
   rooms: {
     todos: {
       presence: i.entity({}),
